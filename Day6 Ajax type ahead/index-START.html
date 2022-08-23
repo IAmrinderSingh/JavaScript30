@@ -32,7 +32,25 @@
         return place.city.match(regex) || place.state.match(regex);
       })
     }
-    
+
+    function displayMathes() {
+      const mathesArray = findMatches(this.value, cities);
+      const html = mathesArray.map(place => {
+        return `
+            <li>
+              <span class="name">${place.city}, ${place.state}</span>
+              <span class="population">${place.population}</span>
+            </li>
+          `;
+      }).join('');
+      suggestions.innerHTML = html;
+    }
+
+    const search = document.querySelector('.search');
+    const suggestions = document.querySelector('.suggestions');
+
+    search.addEventListener('change', displayMathes);
+    search.addEventListener('keyup', displayMathes);
   </script>
 </body>
 
