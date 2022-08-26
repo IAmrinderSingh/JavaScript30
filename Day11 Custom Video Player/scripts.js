@@ -13,5 +13,13 @@ function toogle(){
     const method=video.paused ? 'play':'pause';
     video[method]();
 }
+
+function updateButton(){
+    toggle.textContent= this.paused ? '►':'❚ ❚';
+}
+
+video.addEventListener('play',updateButton);
+video.addEventListener('pause',updateButton);
+
 video.addEventListener('click',toogle);
 toggle.addEventListener('click',toogle);
