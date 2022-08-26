@@ -10,9 +10,8 @@ const skipButtons=document.querySelector('[data-skip]');
 // Build our functions
 
 function toogle(){
-    console.log(video);
     const method=video.paused ? 'play':'pause';
     video[method]();
 }
-
+video.addEventListener('click',toogle);
 toggle.addEventListener('click',toogle);
