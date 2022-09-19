@@ -62,7 +62,20 @@
     console.clear()
     console.log(cap3);
     // Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
-
+    const AS={
+      name:"A",
+      age:21,
+      social:{
+        twiter:'AS',
+        Insta:"AS"
+      }
+    }
+    console.clear()
+    console.log(AS);
+    const person1=Object.assign({},AS);
+    console.log(person1);
+    const person2=JSON.parse(JSON.stringify(AS));
+    console.log(person2);
   </script>
 
 </body>
